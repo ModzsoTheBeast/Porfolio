@@ -1,10 +1,10 @@
-  <div class="circle" #circle></div>
+<app-header></app-header>
+<div class="circle" #circle></div>
 <!--  <particles [style]="myStyle" [width]="width" [height]="height" [params]="myParams"></particles>-->
 <div class="container">
-  <h2 class="hw">Hello world!</h2>
-  <div class="name">
-    <p>I'm </p>
-    <h1 style=" font-family: Argesta; ">Patrik Lőkös</h1>
-  </div>
-  <p class="tw"></p>
+  <h2 class="hw">Hello, my name is</h2>
+  <h1>Patrik Lőkös</h1>
+  <p class="tw">I' m a programmer.</p>
 </div>
+<ng-particles [id]="id" [options]="particlesOptions" [particlesInit]="particlesInit"
+              (particlesLoaded)="particlesLoaded($event)"></ng-particles>

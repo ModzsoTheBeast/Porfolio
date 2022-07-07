@@ -1,4 +1,6 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine";
+import { loadFull } from "tsparticles";
 
 @Component({
   selector: 'app-home',
@@ -6,63 +8,93 @@ import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  // myStyle: object = {};
-  // myParams: object = {};
-  // width: number = 100;
-  // height: number = 100;
+  id = "tsparticles";
+  particlesOptions = {
+    background: {
+      color: {
+        value: "#0d47a1"
+      }
+    },
+    fpsLimit: 120,
+    interactivity: {
+      events: {
+        onClick: {
+          enable: true,
+          mode: ClickMode.push
+        },
+        onHover: {
+          enable: true,
+          mode: HoverMode.repulse
+        },
+        resize: true
+      },
+      modes: {
+        push: {
+          quantity: 4
+        },
+        repulse: {
+          distance: 200,
+          duration: 0.4
+        }
+      }
+    },
+    particles: {
+      color: {
+        value: "#ffffff"
+      },
+      links: {
+        color: "#ffffff",
+        distance: 150,
+        enable: true,
+        opacity: 0.5,
+        width: 1
+      },
+      collisions: {
+        enable: true
+      },
+      move: {
+        direction: MoveDirection.none,
+        enable: true,
+        outModes: {
+          default: OutMode.bounce
+        },
+        random: false,
+        speed: 6,
+        straight: false
+      },
+      number: {
+        density: {
+          enable: true,
+          area: 800
+        },
+        value: 80
+      },
+      opacity: {
+        value: 0.5
+      },
+      shape: {
+        type: "circle"
+      },
+      size: {
+        value: {min: 1, max: 5 },
+      }
+    },
+    detectRetina: true
+  };
 
   constructor() { }
 
   ngOnInit(): void {
-    //const target = document.querySelector('.tw')
-    /*const writer = new Typewriter(target, {
-      loop: true,
-      typeSpeed: 80,
-      deleteSpeed: 80,
-      typeColor: 'red'
-    })
 
-    writer
-      .type('You can type')
-      .rest(500)
-      .changeOps({ deleteSpeed: 80 })
-      .remove(4)
-      .type('edit')
-      .rest(500)
-      .remove(4)
-      .type('synchronize callbacks')
-      .rest(500)
-      .changeOps({ deleteSpeed: 20 })
-      .remove(21)
-      .type('change options on the go')
-      .rest(500)
-      .clear()
-      .start()*/
+  }
 
-    /*this.myStyle = {
-      'position': 'fixed',
-      'width': '100%',
-      'height': '100%',
-      'z-index': -1,
-      'top': 0,
-      'left': 0,
-      'right': 0,
-      'bottom': 0,
-    };
+  particlesLoaded(container: Container): void {
+    console.log(container);
+  }
 
-    this.myParams = {
-      particles: {
-        number: {
-          value: 200,
-        },
-        color: {
-          value: '#ff0000'
-        },
-        shape: {
-          type: 'triangle',
-        },
-      }
-    };*/
+  async particlesInit(engine: Engine): Promise<void> {
+    console.log(engine);
+    await loadFull(engine);
   }
 
   @ViewChild('circle') circle: any;

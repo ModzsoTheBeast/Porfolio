@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root{
+  --bg-color: #000d27;
+  --typeWriterSpeed: 3s;
+  --cursorBlinkSpeed: 800ms;
+  --typeWriterCharacters: 17;
+  --mainColorTheme: red;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden}
 
@@ -13,3 +21,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
   src: local("Argesta"), url(./assets/fonts/argestadisplay-regular-webfont.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "Sacramento";
+  src: local("Sacramento"), url(./assets/fonts/Sacramento-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Trispace";
+  src: local("Trispace"), url(./assets/fonts/Trispace-Light.ttf) format("truetype");
+}

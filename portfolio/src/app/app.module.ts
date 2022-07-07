@@ -12,7 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgParticlesModule } from "ng-particles";
 //import { ParticlesModule } from 'angular-particle';
 //import { Typewriter } from 't-writer.js';
 
@@ -33,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    NgParticlesModule
     //Typewriter
   ],
   providers: [],
