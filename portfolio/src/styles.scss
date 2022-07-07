@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden}
+
+@font-face {
+  font-family: "Rialltos";
+  src: local("Rialltos"), url(./assets/fonts/rialltos-free.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Argesta";
+  src: local("Argesta"), url(./assets/fonts/argestadisplay-regular-webfont.ttf) format("truetype");
+}
+
