@@ -6,6 +6,14 @@
   --cursorBlinkSpeed: 800ms;
   --typeWriterCharacters: 17;
   --mainColorTheme: red;
+  --gradient: linear-gradient(45deg,
+    rgba(59,59,59,0.5) 0%,
+    rgba(57,55,105,0.5) 16%,
+    rgba(46,46,117,0.5) 34%,
+    rgba(37,37,153,0.5) 51%,
+    rgba(48,48,164,0.5) 67%,
+    rgba(27,27,204,0.5) 83%,
+    rgba(0,0,255,0.5) 100%);
 }
 
 html, body { height: 100%; }

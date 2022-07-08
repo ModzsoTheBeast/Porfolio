@@ -13,6 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgParticlesModule } from "ng-particles";
+import { TransitionComponent } from './components/transition/transition.component';
+import { CursorComponent } from './components/cursor/cursor.component';
 //import { ParticlesModule } from 'angular-particle';
 //import { Typewriter } from 't-writer.js';
 
@@ -25,7 +27,9 @@ import { NgParticlesModule } from "ng-particles";
     ContactComponent,
     FooterComponent,
     HeaderComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TransitionComponent,
+    CursorComponent
   ],
   imports: [
     //ParticlesModule,

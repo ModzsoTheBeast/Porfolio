@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+import {TransitionService} from "../../services/transition.service";
 
 @Component({
   selector: 'app-home',
@@ -10,16 +11,12 @@ import { loadFull } from "tsparticles";
 export class HomeComponent implements OnInit {
   id = "tsparticles";
   particlesOptions = {
-    background: {
-      color: {
-        value: "#0d47a1"
-      }
-    },
+
     fpsLimit: 120,
     interactivity: {
       events: {
         onClick: {
-          enable: true,
+          enable: false,
           mode: ClickMode.push
         },
         onHover: {
@@ -33,24 +30,24 @@ export class HomeComponent implements OnInit {
           quantity: 4
         },
         repulse: {
-          distance: 200,
+          distance: 100,
           duration: 0.4
         }
       }
     },
     particles: {
       color: {
-        value: "#ffffff"
+        value: "#fff"
       },
-      links: {
-        color: "#ffffff",
+/*      links: {
+        color: "red",
         distance: 150,
         enable: true,
         opacity: 0.5,
         width: 1
-      },
+      },*/
       collisions: {
-        enable: true
+        enable: false
       },
       move: {
         direction: MoveDirection.none,
@@ -59,7 +56,7 @@ export class HomeComponent implements OnInit {
           default: OutMode.bounce
         },
         random: false,
-        speed: 6,
+        speed: 2,
         straight: false
       },
       number: {
@@ -67,7 +64,7 @@ export class HomeComponent implements OnInit {
           enable: true,
           area: 800
         },
-        value: 80
+        value: 40
       },
       opacity: {
         value: 0.5
@@ -82,9 +79,10 @@ export class HomeComponent implements OnInit {
     detectRetina: true
   };
 
-  constructor() { }
+  constructor(private transitionSecvice: TransitionService) { }
 
   ngOnInit(): void {
+    this.transitionSecvice.transitionLogic();
 
   }
 
@@ -97,13 +95,8 @@ export class HomeComponent implements OnInit {
     await loadFull(engine);
   }
 
-  @ViewChild('circle') circle: any;
-  @HostListener("document:mousemove", ['$event'])
-  onMouseMove(event:any){
-    setTimeout(()=>{
-      this.circle.nativeElement.style.left = (event.pageX - 15) + "px";
-      this.circle.nativeElement.style.top = (event.pageY - 15) + "px";
-    }, 100)
+  menuClicked(){
+    console.log("asd")
   }
 
 }
