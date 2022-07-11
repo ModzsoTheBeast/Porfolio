@@ -6,6 +6,7 @@
   --cursorBlinkSpeed: 800ms;
   --typeWriterCharacters: 17;
   --mainColorTheme: red;
+  --darkBgColor: #101010;
   --gradient: linear-gradient(45deg,
     rgba(59,59,59,0.5) 0%,
     rgba(57,55,105,0.5) 16%,
@@ -16,8 +17,12 @@
     rgba(0,0,255,0.5) 100%);
 }
 
+.menuDialog .mat-dialog-container{
+  background-color: #282c34;
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden}
+body { margin: 0; padding: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden}
 
 @font-face {
   font-family: "Rialltos";

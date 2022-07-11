@@ -1,0 +1,95 @@
+
+
+.mainDiv{
+  background: var(--bg-color);
+  width: 100vw;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.home, .about, .projects, .contact{
+  color: white;
+  font-size: clamp(3rem, 3vw + 1rem, 6rem);
+  width: max-content;
+  height: clamp(3rem, 3vw + 1rem, 6rem);
+  text-align: center;
+  text-decoration: none;
+  animation: scale .5s ease forwards;
+  z-index: 10000000000;
+  font-family: Arial, monospace;
+  margin-bottom: 1em;
+}
+
+
+
+.home:hover ~ .home1{
+  animation: backText .5s ease-in forwards;
+}
+.about:hover ~ .about1{
+  animation: backText .5s ease-in forwards;
+}
+.projects:hover ~ .projects1{
+  animation: backText .5s ease-in forwards;
+}
+.contact:hover ~ .contact1{
+  animation: backText .5s ease-in forwards;
+}
+
+@keyframes scale {
+  to{
+    transform: scale(1.2);
+  }
+}
+
+@keyframes backText {
+  to{
+    opacity: 60%;
+  }
+}
+
+.home1, .about1, .projects1, .contact1{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: clamp(15rem, 3vw + 1rem, 20rem);
+  opacity: 0;
+  color: var(--mainColorTheme);
+  letter-spacing: .125em;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 768px) {
+  .home:hover{
+    font-family: Arial, monospace;
+    margin-bottom: 1em;
+    color: var(--mainColorTheme);
+  }
+  .about:hover{
+    font-family: Arial, monospace;
+    margin-bottom: 1em;
+    color: var(--mainColorTheme);
+  }
+  .projects:hover{
+    font-family: Arial, monospace;
+    margin-bottom: 1em;
+    color: var(--mainColorTheme);
+  }
+  .contact:hover{
+    font-family: Arial, monospace;
+    margin-bottom: 1em;
+    color: var(--mainColorTheme);
+  }
+  .home1, .about1, .projects1, .contact1{
+    display: none;
+  }
+}

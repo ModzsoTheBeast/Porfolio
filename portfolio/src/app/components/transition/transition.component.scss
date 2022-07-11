@@ -15,3 +15,33 @@
   opacity: 1;
   pointer-events: all;
 }
+
+.transition-2{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  bottom: 0;
+  z-index: 100;
+  background-color: var(--mainColorTheme);
+  transition: 0.5s ease-out;
+}
+
+.transition-2.isActive{
+  left: 0;
+}
+
+.transition-3{
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 100;
+  background-color: var(--mainColorTheme);
+  transition: 0.5s ease-out;
+}
+
+.transition-3.isActive{
+  top: 0;
+}

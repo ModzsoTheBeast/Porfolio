@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgParticlesModule } from "ng-particles";
 import { TransitionComponent } from './components/transition/transition.component';
 import { CursorComponent } from './components/cursor/cursor.component';
+import { MenuComponent } from './components/dialogs/menu/menu.component';
 //import { ParticlesModule } from 'angular-particle';
 //import { Typewriter } from 't-writer.js';
 
@@ -29,7 +30,8 @@ import { CursorComponent } from './components/cursor/cursor.component';
     HeaderComponent,
     ProjectsComponent,
     TransitionComponent,
-    CursorComponent
+    CursorComponent,
+    MenuComponent
   ],
   imports: [
     //ParticlesModule,

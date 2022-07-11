@@ -10,13 +10,13 @@ export class TransitionComponent implements AfterViewInit {
 
   @Input() transitionMode = 1;
 
-  constructor(private transitionSecvice: TransitionService) {
+  constructor(private transitionService: TransitionService) {
 
   }
 
   ngAfterViewInit() {
     let element = document.getElementById('transition');
-    this.transitionSecvice.setTransitionNumber(element);
+    this.transitionService.setTransitionNumber(element);
   }
 
 

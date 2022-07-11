@@ -1,4 +1,5 @@
 import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cursor',
@@ -7,7 +8,9 @@ import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 })
 export class CursorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+    this.router.navigate(['home']);
+  }
 
   ngOnInit(): void {
   }

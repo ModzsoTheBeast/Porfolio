@@ -1,1 +1,18 @@
+<app-transition [transitionMode]="2"></app-transition>
 <p>projects works!</p>
+<div class="position-absolute top-0 end-0 mt-4 me-4 ">
+  <button
+    id="menuBtn"
+    mat-icon-button
+    role="button"
+    [hidden]="isDialogOpened"
+    (click)="menuClicked()"
+    style="z-index: 100001">
+
+    <mat-icon
+      [ngStyle]="{'color':'red','transform':'scale(1.5)'}"
+    >
+      menu
+    </mat-icon>
+  </button>
+</div>

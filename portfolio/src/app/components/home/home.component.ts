@@ -2,6 +2,9 @@ import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import {TransitionService} from "../../services/transition.service";
+import {MatDialog} from "@angular/material/dialog";
+import {MenuComponent} from "../dialogs/menu/menu.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -9,8 +12,9 @@ import {TransitionService} from "../../services/transition.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  id = "tsparticles";
-  particlesOptions = {
+  id: string = "tsparticles";
+  isDialogOpened: boolean = false;
+  particlesOptions: object = {
 
     fpsLimit: 120,
     interactivity: {
@@ -79,7 +83,9 @@ export class HomeComponent implements OnInit {
     detectRetina: true
   };
 
-  constructor(private transitionSecvice: TransitionService) { }
+  constructor(private transitionSecvice: TransitionService,
+              private dialog: MatDialog,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.transitionSecvice.transitionLogic();
@@ -95,8 +101,10 @@ export class HomeComponent implements OnInit {
     await loadFull(engine);
   }
 
-  menuClicked(){
-    console.log("asd")
+  menuClicked(): void{
+    console.log("clicked")
+    this.isDialogOpened = !this.isDialogOpened;
+    this.router.navigate(['menu']);
   }
 
 }

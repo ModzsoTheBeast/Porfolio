@@ -9,5 +9,6 @@ export class AppComponent implements OnInit{
   title = 'portfolio';
 
   ngOnInit() {
+    document.documentElement.style.cursor = 'none'
   }
 }

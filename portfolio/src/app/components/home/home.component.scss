@@ -6,13 +6,13 @@ body{
   overflow: hidden;
 }
 
-.menuBtn{
+
+#menuBtn{
   z-index: 200;
-  cursor: pointer;
 }
 
-.menuBtn:hover{
-  transform: rotateZ(180deg);
+#menuBtn:hover{
+  animation: rotate .3s ease forwards;
 }
 
 
@@ -146,6 +146,12 @@ h1{
       typeWriter var(--typeWriterSpeed) steps(var(--typeWriterCharacters)) 4s forwards,
       blink var(--cursorBlinkSpeed) steps(var(--typeWriterCharacters)) infinite;
     //padding-bottom: .125em;
+  }
+}
+
+@keyframes rotate {
+  to{
+    transform: rotateZ(180deg);
   }
 }
 

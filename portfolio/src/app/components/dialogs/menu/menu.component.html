@@ -1,0 +1,25 @@
+<div class="position-absolute top-0 end-0 mt-4 me-4 ">
+  <button
+    class="menuBtn"
+    mat-icon-button
+    role="button"
+    (click)="xClicked()"
+    style="z-index: 100001">
+
+    <mat-icon
+      [ngStyle]="{'color':'red','transform':'scale(1.5)'}"
+    >
+      close
+    </mat-icon>
+  </button>
+</div>
+<div class="mainDiv">
+  <a class="home" routerLink="/home">HOME</a>
+  <a class="about" routerLink="/about">ABOUT</a>
+  <a class="projects" routerLink="/projects">PROJECTS</a>
+  <a class="contact" routerLink="/contact">CONTACT</a>
+  <p class="home1">HOME</p>
+  <p class="about1">ABOUT</p>
+  <p class="projects1">PROJECTS</p>
+  <p class="contact1">CONTACT</p>
+</div>
