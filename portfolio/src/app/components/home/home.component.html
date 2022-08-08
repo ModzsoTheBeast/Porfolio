@@ -1,27 +1,38 @@
-<app-transition [transitionMode]="1"></app-transition>
-
-<div class="container1">
-  <div class="position-absolute top-0 end-0 mt-4 me-4 ">
-    <button
-      id="menuBtn"
-      mat-icon-button
-      role="button"
-      [hidden]="isDialogOpened"
-      (click)="menuClicked()"
-      style="z-index: 100001">
+<div class="position-absolute top-0 end-0 mt-4 me-4 ">
+  <button
+    id="menuBtn"
+    mat-icon-button
+    role="button"
+    [hidden]="isDialogOpened"
+    (click)="menuClicked()"
+    style="z-index: 10">
 <!--      <link rel="shortcut icon" href="../../../assets/images/favicon.ico" />-->
-      <mat-icon
 
-        [ngStyle]="{'color':'red','transform':'scale(1.5)'}"
-      >
-        menu
-      </mat-icon>
-    </button>
+    <mat-icon
+
+      [ngStyle]="{'color':'var(--mainColorTheme)','transform':'scale(1.5)'}"
+    >
+      menu
+    </mat-icon>
+  </button>
+</div>
+<img src="assets/images/patrik_logo_new.svg" alt="logo" class="position-absolute top-0 start-0 m-4" style="width: 15%; height: 15%; filter: invert(16%) sepia(97%) saturate(7426%) hue-rotate(360deg) brightness(108%) contrast(112%);">
+<div class="container1" style="z-index: 2!important;">
+  <div class="neon neon1"></div>
+  <div style="flex-direction: column;text-align: -webkit-center;">
+    <h2 class="hw" >Hello, my name is</h2>
+    <div class="patrik">
+      <span >
+        Patrik
+      </span>
+      <span>
+        Lőkös
+      </span>
+    </div>
+    <p class="tw">I' m a programmer.</p>
   </div>
-  <h2 class="hw">Hello, my name is</h2>
-  <h1>Patrik Lőkös</h1>
-  <p class="tw">I' m a programmer.</p>
+  <div class="neon neon2"></div>
 </div>
 <ng-particles [id]="id" [options]="particlesOptions" [particlesInit]="particlesInit"
-              (particlesLoaded)="particlesLoaded($event)" style="z-index: -10"></ng-particles>
+              (particlesLoaded)="particlesLoaded($event)" style="z-index: 1!important;"></ng-particles>
 

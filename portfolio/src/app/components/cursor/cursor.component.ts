@@ -21,4 +21,7 @@ export class CursorComponent implements OnInit {
     this.circle.nativeElement.style.left = (event.pageX - 15) + "px";
     this.circle.nativeElement.style.top = (event.pageY - 15) + "px";
   }
+
+
+
 }

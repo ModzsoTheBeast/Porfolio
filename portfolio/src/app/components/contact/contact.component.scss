@@ -6,8 +6,134 @@
   animation: rotate .3s ease forwards;
 }
 
+.outerDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2em;
+}
+.innerDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  margin-left: 1em;
+}
+.innerDiv > *{
+  color: white;
+  align-items: center;
+  margin: 0;
+}
+.white-icon {
+  color: white;
+  transform: scale(2);
+}
+.mat-send{
+  color: white;
+  background-color: var(--mainColorTheme);
+}
 @keyframes rotate {
   to{
     transform: rotateZ(180deg);
+  }
+}
+.inp{
+  width: 100%;
+  height: 20%;
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+  gap: 10em;
+  z-index: 200!important;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  height: 50vh;
+}
+
+::ng-deep .mat-error{
+  margin-top: 1.3em;
+  margin-left: 40px;
+}
+
+::ng-deep .mat-form-field{
+  background: black;
+  border-radius: 10px;
+  margin-bottom: 1.34em;
+  height: 20%;
+  font-size: clamp(1rem, 3vw + .5rem, 2rem);
+}
+
+::ng-deep .mat-form-field-infix{
+  margin-left: 20px;
+  border: none;
+}
+
+::ng-deep .mat-form-field-label-wrapper{
+  display: none;
+}
+
+::ng-deep .mat-form-field .mat-form-field-wrapper{
+  padding-bottom: 0!important;
+}
+
+::ng-deep .mat-form-field .mat-input-element {
+  color: white;
+  padding-left: 20px;
+}
+::ng-deep .mat-form-field .mat-form-field-label {
+  color: white!important;
+  display: none;
+}
+::ng-deep .mat-form-field .mat-form-field-underline {
+  display: none;
+}
+::ng-deep .mat-form-field .mat-form-field-ripple {
+  background-color: white;
+}
+::ng-deep .mat-form-field .mat-form-field-required-marker {
+  color: white;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: var(--mainColorTheme)!important;
+
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: var(--mainColorTheme);
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-required-marker {
+  color: var(--mainColorTheme);
+}
+::ng-deep .mat-form-field.mat-focused .mat-input-element {
+  color: var(--mainColorTheme);
+
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-input-element {
+  color: white;
+}
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: white!important;
+}
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
+  color: white;
+}
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+  background-color: white;
+}
+
+@media screen and(max-width: 768px) {
+  .main{
+    flex-direction: column-reverse!important;
+    height: 90vh;
+    overflow: scroll;
+    gap: 1em!important;
+    justify-content: center;
+    align-items: center;
+  }
+  .main > div{
+    width: 85%!important;
   }
 }

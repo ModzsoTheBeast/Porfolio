@@ -15,11 +15,22 @@ export class AboutComponent implements OnInit {
               private router: Router){ }
 
   ngOnInit(): void {
-    this.transitionService.transitionLogic();
+   // this.transitionService.transitionLogic();
+    console.log(getMaxZIndex())
   }
 
   menuClicked(){
     this.router.navigate(['menu']);
     this.isDialogOpened = !this.isDialogOpened;
   }
+
 }
+function getMaxZIndex() {
+  return Math.max(
+    ...Array.from(document.querySelectorAll('body *'), el =>
+      parseFloat(window.getComputedStyle(el).zIndex),
+    ).filter(zIndex => !Number.isNaN(zIndex)),
+    0,
+  );
+}
+

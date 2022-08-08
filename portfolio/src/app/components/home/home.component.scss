@@ -15,18 +15,110 @@ body{
   animation: rotate .3s ease forwards;
 }
 
+.neon{
+  position: relative;
+  width: 1%;
+  height: 500px;
+  z-index: 100;
+  background: var(--mainColorTheme);
+  box-shadow: 0 0 10px var(--mainColorTheme), 0 0 40px var(--mainColorTheme), 0 0 80px var(--mainColorTheme);
+  border-radius: 20px;
+
+}
+.neon::before{
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  width: 6px;
+  height: 480px;
+  z-index: 101;
+  box-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
+  top: 9px;
+  border-radius: 20px;
+  left: 3px;
+}
+
+.neon1{
+  margin-right: 15em;
+/*  animation-iteration-count: infinite;
+  animation-name: flicker;
+  animation-duration: 500ms;
+  animation-delay: 8s;*/
+}
+.neon1::before{
+  margin-right: 15em;
+}
+
+.neon2{
+  margin-left: 15em;
+/*  animation-name: flicker;
+  animation-duration: 2ms;
+  animation-iteration-count: 3;
+  animation-timing-function: linear;
+  animation-delay: 12s;
+  -webkit-animation-delay: 12s;*/
+}
+
 
 .container1{
-  display: grid;
-  vertical-align: center !important;
-  min-height: 100vh;
+  display: flex;
+  justify-content: center !important;
+  height: min-content;
   width: 100%;
-  place-content: center;
-  text-align: center;
-  background-image: url("../../../assets/images/newbg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  align-items: center;
+  flex-direction: row;
+  background: var(--darkBgColor);
+}
+
+@media screen and(max-width: 768px) {
+  .container1{
+    flex-direction: column;
+  }
+  .patrik{
+    flex-direction: column!important;
+    height: 110px!important;
+  }
+  .patrik > span:first-child{
+    margin-bottom: 100px;
+  }
+  .neon {
+    width: 80%;
+    height: 10px;
+  }
+  .neon1{
+    margin-right: 0;
+    margin-bottom: 10em;
+  }
+  .neon2{
+    margin-left: 0;
+    margin-top: 10em;
+  }
+  .neon::before {
+    width: 95%;
+    height: .5em;
+    left: 15px;
+    top: 2px;
+  }
+
+  .neon1::before {
+    margin-right: 15em;
+  }
+}
+
+@media screen and(max-width: 550px) {
+  .neon::before {
+    width: 75vw;
+    height: .5em;
+    left: 15px;
+    top: 2px;
+  }
+
+}
+@media screen and(min-width: 1500px) {
+  .neon::before {
+    left: 5px;
+  }
+
 }
 
 @keyframes bg-animation {
@@ -44,16 +136,21 @@ body{
   animation: fadeInDown 2s ease forwards;
 }
 
-h1{
+.patrik{
   color: var(--mainColorTheme);
   font-size: clamp(6rem, 3vw + 1rem, 10rem);
-  align-self: center;
-  margin: .5em 0 .5em 0;
-  height: max-content;
+  /* align-self: center; */
+  margin: 0.8em 0 0.8em 0;
+  height: 50px;
   font-family: Sacramento, monospace;
   opacity: 0;
   transform: translateY(-3rem);
+  display: flex;
+  flex-direction: row;
   animation: fadeInDown 2s ease forwards;
+}
+.patrik > span:first-child{
+  margin-right: .3em;
 }
 
 .tw{
@@ -84,7 +181,7 @@ h1{
 }
 
 .tw::before{
-  background: var(--bg-color);
+  background: var(--darkBgColor);
   //background: green;
   height: clamp(1.5rem, 3vw + .5rem, 2.5rem);
   animation: typeWriter var(--typeWriterSpeed) steps(var(--typeWriterCharacters)) 4s forwards; //forwardstól marad a végén
@@ -94,7 +191,7 @@ h1{
 .tw::after{
   width: 5px;
   height: clamp(1.5rem, 3vw + .5rem, 2.5rem);
-  background: red;
+  background: var(--mainColorTheme);
   animation:
     typeWriter var(--typeWriterSpeed) steps(var(--typeWriterCharacters)) 4s forwards,
     blink var(--cursorBlinkSpeed) steps(var(--typeWriterCharacters)) infinite;
@@ -132,7 +229,7 @@ h1{
   }
 
   .tw::before{
-    background: var(--bg-color);
+    background: var(--darkBgColor);
     //background: green;
     height: clamp(1.5rem, 3vw + .5rem, 2.5rem);
     animation: typeWriter var(--typeWriterSpeed) steps(var(--typeWriterCharacters)) 4s forwards; //forwardstól marad a végén
@@ -141,7 +238,7 @@ h1{
   .tw::after{
     width: 5px;
     height: clamp(1.5rem, 3vw + .5rem, 2.5rem);
-    background: red;
+    background: var(--mainColorTheme);
     animation:
       typeWriter var(--typeWriterSpeed) steps(var(--typeWriterCharacters)) 4s forwards,
       blink var(--cursorBlinkSpeed) steps(var(--typeWriterCharacters)) infinite;
@@ -172,4 +269,14 @@ h1{
     opacity: 1;
     transform: translateY(0);
   }
+}
+@keyframes flicker {
+  0%{opacity: 0}
+  10%{opacity: 1}
+  20%{opacity: 0}
+  40%{opacity: 1}
+  50%{opacity: 0}
+  60%{opacity: 1}
+  80%{opacity: 0}
+  100%{opacity: 1}
 }

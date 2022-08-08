@@ -1,7 +1,15 @@
 
+#menuBtn:hover{
+  animation: rotate .3s ease forwards;
+}
+@keyframes rotate {
+  to{
+    transform: rotateZ(180deg);
+  }
+}
 
 .mainDiv{
-  background: var(--bg-color);
+  background: var(--darkBgColor);
   width: 100vw;
   height: 100vh;
   min-width: 100%;
@@ -14,7 +22,7 @@
   align-items: center;
 }
 .home, .about, .projects, .contact{
-  color: white;
+  color: #cecece;
   font-size: clamp(3rem, 3vw + 1rem, 6rem);
   width: max-content;
   height: clamp(3rem, 3vw + 1rem, 6rem);
@@ -26,6 +34,9 @@
   margin-bottom: 1em;
 }
 
+.home:hover, .about:hover, .projects:hover, .contact:hover{
+  color: white;
+}
 
 
 .home:hover ~ .home1{
@@ -61,31 +72,31 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  font-size: clamp(15rem, 3vw + 1rem, 20rem);
+  font-size: clamp(7rem, 3vw + 6rem, 20rem);
   opacity: 0;
   color: var(--mainColorTheme);
   letter-spacing: .125em;
-  font-weight: bolder;
+  font-family: Monoton, monospace;
 }
 
 @media screen and (max-width: 768px) {
   .home:hover{
-    font-family: Arial, monospace;
+    font-family: Monoton, monospace;
     margin-bottom: 1em;
     color: var(--mainColorTheme);
   }
   .about:hover{
-    font-family: Arial, monospace;
+    font-family: Monoton, monospace;
     margin-bottom: 1em;
     color: var(--mainColorTheme);
   }
   .projects:hover{
-    font-family: Arial, monospace;
+    font-family: Monoton, monospace;
     margin-bottom: 1em;
     color: var(--mainColorTheme);
   }
   .contact:hover{
-    font-family: Arial, monospace;
+    font-family: Monoton, monospace;
     margin-bottom: 1em;
     color: var(--mainColorTheme);
   }

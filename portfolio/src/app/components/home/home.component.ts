@@ -3,7 +3,7 @@ import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from 
 import { loadFull } from "tsparticles";
 import {TransitionService} from "../../services/transition.service";
 import {MatDialog} from "@angular/material/dialog";
-import {MenuComponent} from "../dialogs/menu/menu.component";
+import {MenuComponent} from "../menu/menu.component";
 import {Router} from "@angular/router";
 
 @Component({
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
           mode: ClickMode.push
         },
         onHover: {
-          enable: true,
+          enable: false,
           mode: HoverMode.repulse
         },
         resize: true
@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.transitionSecvice.transitionLogic();
+    //this.transitionSecvice.transitionLogic();
 
   }
 

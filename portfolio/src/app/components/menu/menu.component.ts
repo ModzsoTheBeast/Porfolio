@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {TransitionService} from "../../../services/transition.service";
+import {TransitionService} from "../../services/transition.service";
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
               private transitionSecvice: TransitionService) { }
 
   ngOnInit(): void {
-    this.transitionSecvice.transitionLogic();
+    //this.transitionSecvice.transitionLogic();
   }
 
   xClicked(): void{

@@ -1,5 +1,3 @@
-<app-transition [transitionMode]="1"></app-transition>
-<p>about works!</p>
 <div class="position-absolute top-0 end-0 mt-4 me-4 ">
   <button
     id="menuBtn"
@@ -7,7 +5,7 @@
     role="button"
     [hidden]="isDialogOpened"
     (click)="menuClicked()"
-    style="z-index: 100001">
+    style="z-index: 3">
 
     <mat-icon
       [ngStyle]="{'color':'red','transform':'scale(1.5)'}"
@@ -16,3 +14,57 @@
     </mat-icon>
   </button>
 </div>
+
+<div class="container1">
+  <div class="title">
+    <h2 style="font-size: xxx-large">
+      <span style="color: var(--text-color)">
+        About
+      </span>
+      <span style="color: var(--mainColorTheme)">
+        Me
+      </span>
+    </h2>
+    <h4 style="color: var(--text-color);font-size: x-large;">Get to know me</h4>
+  </div>
+  <div class="main">
+    <div class="main-text">
+      <h2 style="color: var(--text-color); text-align: start; ">I'm a <span style="color: var(--mainColorTheme);">creative web developer</span>
+        based in Budapest, Hungary.</h2>
+      <p
+        style="color: var(--text-color); text-align: start;letter-spacing: 2px;font-weight: 400;">
+        I graduated from the University of
+        Pécs, the Faculty of Science in
+        computer science. My range of
+        interest involves Web
+        Development and various
+        frameworks, such as Angular and
+        React.JS. I am greatly interested in
+        software development and in
+        UI/UX. I actively seek possibilities
+        to develop my expertise, and to
+        expand my knowledge and my
+        experiences.</p>
+    </div>
+    <img class="main-img" src="assets/images/main_bg1.jpg" alt="about_img">
+  </div>
+  <a style="z-index: 4!important;" href="assets/LP_angol_LP_magyar_merged.pdf" download="CV_Patrik_Lokos_HU_EN">Download
+    CV</a>
+  <div class="title">
+    <h2 style="font-size: xxx-large">
+      <span style="color: var(--mainColorTheme)">
+        My
+      </span>
+      <span style="color: var(--text-color)">
+        Services
+      </span>
+    </h2>
+  </div>
+  <div class="skill">
+    <mat-card class="card"></mat-card>
+    <mat-card class="card"></mat-card>
+    <mat-card class="card"></mat-card>
+  </div>
+
+</div>
+

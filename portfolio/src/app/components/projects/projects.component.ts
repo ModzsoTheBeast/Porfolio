@@ -15,7 +15,7 @@ export class ProjectsComponent implements OnInit {
               private router: Router){ }
 
   ngOnInit(): void {
-    this.transitionService.transitionLogic();
+    //this.transitionService.transitionLogic();
   }
 
   menuClicked(){

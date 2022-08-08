@@ -1,3 +1,32 @@
 
 <app-cursor></app-cursor>
-<router-outlet></router-outlet>
+<div class="position-absolute top-0 start-0 m-4" style="z-index: 10">
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon [ngStyle]="{'color': 'var(--mainColorTheme)'}">settings</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" class="customize">
+    <button class="cBtn" mat-menu-item (click)="changeColor('blue')">
+      <div class="cSquare" style="background: blue"></div>
+      <span>Blue</span>
+    </button>
+    <button class="cBtn" mat-menu-item (click)="changeColor('orange')">
+      <div class="cSquare" style="background: orange"></div>
+      <span>Orange</span>
+    </button>
+    <button class="cBtn" mat-menu-item (click)="changeColor('yellow')">
+      <div class="cSquare" style="background: yellow"></div>
+      <span>Yellow</span>
+    </button>
+    <button class="cBtn" mat-menu-item (click)="changeColor('purple')">
+      <div class="cSquare" style="background: purple"></div>
+      <span>Purple</span>
+    </button>
+    <button class="cBtn" mat-menu-item (click)="changeColor('red')">
+      <div class="cSquare" style="background: red"></div>
+      <span>Red</span>
+    </button>
+  </mat-menu>
+</div>
+<div id="page" class="routerContainer" [@routeAnimation]="getDepth(myOutlet)">
+  <router-outlet #myOutlet="outlet"></router-outlet>
+</div>

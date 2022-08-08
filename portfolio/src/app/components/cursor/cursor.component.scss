@@ -5,9 +5,9 @@
   left: 0;
   right: 0;
   border-radius: 50%;
-  border: 1px solid #fe0000;
+  border: 1px solid var(--mainColorTheme);
   position: absolute;
   animation-duration: .5s;
   overflow: hidden;
-  z-index: 10000;
+  z-index: 3;
 }

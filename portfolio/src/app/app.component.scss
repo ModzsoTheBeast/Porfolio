@@ -1,0 +1,24 @@
+.routerContainer{
+  position: relative;
+}
+.routerContainer>*{
+  display: block;
+}
+.cBtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  color: white;
+}
+.cSquare{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+::ng-deep .customize {
+  background: #2c2c2c;
+}
