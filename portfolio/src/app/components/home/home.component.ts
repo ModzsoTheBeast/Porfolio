@@ -5,6 +5,7 @@ import {TransitionService} from "../../services/transition.service";
 import {MatDialog} from "@angular/material/dialog";
 import {MenuComponent} from "../menu/menu.component";
 import {Router} from "@angular/router";
+import {MenuBtnService} from "../../services/menu-btn.service";
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,7 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
   id: string = "tsparticles";
-  isDialogOpened: boolean = false;
   particlesOptions: object = {
-
     fpsLimit: 120,
     interactivity: {
       events: {
@@ -83,28 +82,18 @@ export class HomeComponent implements OnInit {
     detectRetina: true
   };
 
-  constructor(private transitionSecvice: TransitionService,
-              private dialog: MatDialog,
-              private router: Router) { }
+  constructor(private dialog: MatDialog,
+              private router: Router,
+              private menuBtnService: MenuBtnService) { }
 
   ngOnInit(): void {
     //this.transitionSecvice.transitionLogic();
-
+    this.menuBtnService.changeOpenedSubject(false);
   }
 
-  particlesLoaded(container: Container): void {
-    console.log(container);
-  }
+  particlesLoaded(container: Container): void {}
 
   async particlesInit(engine: Engine): Promise<void> {
-    console.log(engine);
     await loadFull(engine);
   }
-
-  menuClicked(): void{
-    console.log("clicked")
-    this.isDialogOpened = !this.isDialogOpened;
-    this.router.navigate(['menu']);
-  }
-
 }

@@ -1,22 +1,5 @@
-<div class="position-absolute top-0 end-0 mt-4 me-4 ">
-  <button
-    id="menuBtn"
-    mat-icon-button
-    role="button"
-    [hidden]="isDialogOpened"
-    (click)="menuClicked()"
-    style="z-index: 100001">
-
-    <mat-icon
-      [ngStyle]="{'color':'var(--mainColorTheme)','transform':'scale(1.5)'}"
-    >
-      menu
-    </mat-icon>
-  </button>
-</div>
 <div class="container1">
-  <div style="width: 80%;overflow-y: scroll; height: 80vh;">
-
+  <div style="width: 80%; height: 80vh;">
     <div class="title" style="z-index: 200!important;">
       <h2 style="z-index: 201!important; font-size: xxx-large">
       <span style="color: var(--text-color)">
@@ -37,7 +20,8 @@
       <div style="flex-direction: column; width: 50%;z-index: 202!important;">
         <form [formGroup]="contactForm" (submit)="sendMail()">
           <mat-form-field class="inp">
-            <input matInput placeholder="Name" type="text" formControlName="name">
+            <mat-label>Name</mat-label>
+            <input matInput  type="text" formControlName="name">
             <mat-error *ngIf="nameError">Kötelező</mat-error>
           </mat-form-field>
           <mat-form-field class="inp">
@@ -49,8 +33,8 @@
             <input matInput placeholder="Subject" type="text" formControlName="subject">
             <mat-error *ngIf="subjectError">Kötelező</mat-error>
           </mat-form-field>
-          <mat-form-field class="inp" style="height: 100%">
-            <textarea matInput placeholder="Message" type="text" formControlName="message"></textarea>
+          <mat-form-field class="inp" style="height: 100%;">
+            <textarea matInput placeholder="Message" type="text" formControlName="message" ></textarea>
             <mat-error *ngIf="messageError">Kötelező</mat-error>
           </mat-form-field>
           <button mat-raised-button type="submit" color="send">Send</button>
@@ -84,7 +68,7 @@
           <div class="outerDiv">
             <mat-icon class="white-icon" >alternate_email</mat-icon>
             <div class="innerDiv">
-              <h3>Email_outline</h3>
+              <h3>E-mail</h3>
               <p>lokospatrik8@gmail.com</p>
             </div>
           </div>

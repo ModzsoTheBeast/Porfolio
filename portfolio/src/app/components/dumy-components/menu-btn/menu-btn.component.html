@@ -1,0 +1,20 @@
+<div class="position-absolute top-0 end-0 mt-4 me-4 ">
+  <button
+    id="menuBtn"
+    mat-icon-button
+    role="button"
+    (click)="menuClicked()"
+    style="z-index: 3">
+
+    <mat-icon
+      *ngIf="!isDialogOpened;else closed"
+      [ngStyle]="{'color':'var(--mainColorTheme)','transform':'scale(1.5)'}"
+    >
+      menu
+    </mat-icon>
+    <ng-template #closed>
+      <mat-icon [ngStyle]="{'color':'var(--mainColorTheme)','transform':'scale(1.5)'}">closed</mat-icon>
+    </ng-template>
+
+  </button>
+</div>

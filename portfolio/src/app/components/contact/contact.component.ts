@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {TransitionService} from "../../services/transition.service";
 import {Router} from "@angular/router";
-import {FormControl, FormGroup, Validator, Validators} from "@angular/forms";
+import {FormGroup, Validators} from "@angular/forms";
+import {MenuBtnService} from "../../services/menu-btn.service";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-contact',
@@ -10,26 +12,26 @@ import {FormControl, FormGroup, Validator, Validators} from "@angular/forms";
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
-  isDialogOpened: boolean = false;
   nameError =  false;
   emailError =  false;
   subjectError =  false;
   messageError =  false;
   emailFormatError =  false;
 
-
   constructor(private transitionService: TransitionService,
-              private router: Router){
-      this.contactForm = new FormGroup({
-        name: new FormControl(null, [Validators.required]),
-        email: new FormControl(null, [Validators.required, Validators.email]),
-        subject: new FormControl(null, [Validators.required]),
-        message: new FormControl(null, [Validators.required])
-      });
+              private router: Router,
+              private menuBtnService: MenuBtnService)
+  {
+    this.contactForm = new FormGroup({
+      name: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      subject: new FormControl(null, [Validators.required]),
+      message: new FormControl(null, [Validators.required])
+    });
   }
 
   ngOnInit(): void {
-    //this.transitionService.transitionLogic();
+    this.menuBtnService.changeOpenedSubject(false);
   }
 
   get name(){
@@ -45,11 +47,6 @@ export class ContactComponent implements OnInit {
     return this.contactForm.get('message');
   }
 
-  menuClicked(){
-    this.router.navigate(['menu']);
-    this.isDialogOpened = !this.isDialogOpened;
-  }
-
   sendMail() {
     this.nameError = !!(this.name?.hasError('required'));
     this.emailError = !!(this.email?.hasError('required'));
@@ -61,5 +58,14 @@ export class ContactComponent implements OnInit {
     else {
       //TODO
     }
+  }
+
+  createContactForm(): void{
+    this.contactForm = new FormGroup({
+      name: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      subject: new FormControl(null, [Validators.required]),
+      message: new FormControl(null, [Validators.required])
+    });
   }
 }

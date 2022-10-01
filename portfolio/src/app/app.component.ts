@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
   title = 'portfolio';
 
   ngOnInit() {
-    document.documentElement.style.cursor = 'none'
+    //document.documentElement.style.cursor = 'none'
     console.log(getMaxZIndex());
   }
 
@@ -32,28 +32,7 @@ export class AppComponent implements OnInit{
     return myOutlet.activatedRouteData['depth'];
   }
 
-  changeColor(color: string) {
-    const root = document.documentElement;
-    switch (color){
-      case "blue":
-        root.style.setProperty('--mainColorTheme', "blue");
-        break;
-      case "orange":
-        root.style.setProperty('--mainColorTheme', "orange");
-        break;
-      case "yellow":
-        root.style.setProperty('--mainColorTheme', "yellow");
-        break;
-      case "purple":
-        root.style.setProperty('--mainColorTheme', "purple");
-        break;
-      case "red":
-        root.style.setProperty('--mainColorTheme', "red");
-        break;
-      default:
-        break;
-    }
-  }
+
 }
 function getMaxZIndex() {
   return Math.max(

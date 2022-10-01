@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TransitionService} from "../../services/transition.service";
 import {Router} from "@angular/router";
+import {MenuBtnService} from "../../services/menu-btn.service";
 
 @Component({
   selector: 'app-projects',
@@ -8,18 +9,11 @@ import {Router} from "@angular/router";
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-
-  isDialogOpened: boolean = false;
-
   constructor(private transitionService: TransitionService,
-              private router: Router){ }
+              private router: Router,
+              private menuBtnService: MenuBtnService){ }
 
   ngOnInit(): void {
-    //this.transitionService.transitionLogic();
-  }
-
-  menuClicked(){
-    this.router.navigate(['menu']);
-    this.isDialogOpened = !this.isDialogOpened;
+    this.menuBtnService.changeOpenedSubject(false);
   }
 }

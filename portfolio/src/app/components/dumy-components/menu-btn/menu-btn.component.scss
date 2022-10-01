@@ -1,0 +1,13 @@
+#menuBtn{
+  z-index: 200;
+}
+
+#menuBtn:hover{
+  animation: rotate .3s ease forwards;
+}
+
+@keyframes rotate {
+  to{
+    transform: rotateZ(180deg);
+  }
+}

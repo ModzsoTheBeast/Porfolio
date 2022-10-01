@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {TransitionService} from "../../services/transition.service";
+import {MenuBtnService} from "../../services/menu-btn.service";
 
 @Component({
   selector: 'app-menu',
@@ -10,13 +11,10 @@ import {TransitionService} from "../../services/transition.service";
 export class MenuComponent implements OnInit {
 
   constructor(private router:Router,
-              private transitionSecvice: TransitionService) { }
+              private transitionSecvice: TransitionService,
+              private menuBtnService: MenuBtnService) { }
 
   ngOnInit(): void {
-    //this.transitionSecvice.transitionLogic();
-  }
-
-  xClicked(): void{
-    this.router.navigate(['home']);
+    this.menuBtnService.changeOpenedSubject(true);
   }
 }

@@ -1,26 +1,23 @@
-#menuBtn{
-  z-index: 200;
-}
-
-#menuBtn:hover{
-  animation: rotate .3s ease forwards;
-}
-
-@keyframes rotate {
-  to{
-    transform: rotateZ(180deg);
-  }
-}
-
 .container1{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
-  overflow: scroll !important;
+  overflow: hidden;
   z-index: 3;
+}
+
+a{
+  text-decoration: none;
+  font-size: xx-large;
+  font-weight: bold;
+  border: 5px solid var(--mainColorTheme);
+  border-radius: 10px;
+  padding: 20px;
+  color: var(--mainColorTheme);
+  text-shadow: 0 0 10px var(--mainColorTheme);
+  box-shadow: 0 0 10px var(--mainColorTheme), 0 0 40px var(--mainColorTheme), 0 0 80px var(--mainColorTheme);
 }
 
 .title{
@@ -36,10 +33,22 @@
   z-index: 3;
   width: 80%;
 }
+
+.black-bg{
+  position: absolute;
+  width: 95%;
+  height: 350px;
+  background-color: black;
+  top: 240px;
+  left: 2.5em;
+}
+
 .main-text{
+  display: flex;
   flex-direction: column;
   width: 50%;
   z-index: 4!important;
+  justify-content: center;
 }
 .main-text > h2{
   font-size: clamp(1rem, 3vw + .5rem, 2rem);
@@ -59,23 +68,24 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: center;
+  height: 500px;
+  justify-content: space-around;
   align-items: center;
-  gap: 2%;
   z-index: 4;
+  margin-bottom: 2em;
 }
-.card{
-  width: 25%;
-  height: 300px;
-  background: #2c2c2c;
-  margin: 0!important;
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+  gap: 80px;
+  padding: 3em;
 }
 
 @media screen and(max-width: 768px){
-
   .skill{
     flex-direction: column;
-
   }
   .card{
     width: 80%;
@@ -93,15 +103,14 @@
     align-items: center;
     padding-top: 70em;
     padding-bottom: 30em;
+    overflow-x: hidden;
   }
-
   .main-text{
     width: 80%;
   }
   .main-img{
     width: 80%;
   }
-
 }
 @keyframes scaleUp {
   to{

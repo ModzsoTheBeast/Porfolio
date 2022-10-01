@@ -16,6 +16,11 @@ import { TransitionComponent } from './components/transition/transition.componen
 import { CursorComponent } from './components/cursor/cursor.component';
 import { MenuComponent } from './components/menu/menu.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { AboutCardComponent } from './components/dumy-components/about-card/about-card.component';
+import { MenuBtnComponent } from './components/dumy-components/menu-btn/menu-btn.component';
+import { ProjectCardComponent } from './components/dumy-components/project-card/project-card.component';
+import { SkillComponent } from './components/dumy-components/skill/skill.component';
+import { SettingsComponent } from './components/dumy-components/settings/settings.component';
 
 //import { ParticlesModule } from 'angular-particle';
 //import { Typewriter } from 't-writer.js';
@@ -31,7 +36,12 @@ import {ReactiveFormsModule} from "@angular/forms";
     ProjectsComponent,
     TransitionComponent,
     CursorComponent,
-    MenuComponent
+    MenuComponent,
+    AboutCardComponent,
+    MenuBtnComponent,
+    ProjectCardComponent,
+    SkillComponent,
+    SettingsComponent
   ],
   imports: [
     //ParticlesModule,

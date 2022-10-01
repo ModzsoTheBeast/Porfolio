@@ -85,7 +85,7 @@
            sodipodi:nodetypes="cc" />
       </g>
       <path
-         style="display:inline;fill:none; stroke:var(--mainColorTheme);stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;fill:none; stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 49.75,120 V 40.000004"
          id="path1410-0-6"
          sodipodi:nodetypes="cc"

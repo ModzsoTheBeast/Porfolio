@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {TransitionService} from "../../services/transition.service";
 import {Router} from "@angular/router";
+import {MenuBtnService} from "../../services/menu-btn.service";
+
+interface SkillData{
+  name: string,
+  percent: number
+}
 
 @Component({
   selector: 'app-about',
@@ -9,21 +15,20 @@ import {Router} from "@angular/router";
 })
 export class AboutComponent implements OnInit {
 
-  isDialogOpened: boolean = false;
+  skillData: SkillData[] = [{name: "Angular", percent: 80}, {name: "Typescript", percent: 80}, {name: "HTML", percent: 80}, {name: "CSS", percent: 75}, {name: "Git", percent: 80}, {name: "SQL", percent: 60}, {name: "Javascript", percent: 75}, {name: "C#", percent: 60}, {name: "Java", percent: 50}];
 
   constructor(private transitionService: TransitionService,
-              private router: Router){ }
+              private router: Router,
+              private menuBtnService:MenuBtnService){ }
 
   ngOnInit(): void {
-   // this.transitionService.transitionLogic();
+    this.menuBtnService.changeOpenedSubject(false);
     console.log(getMaxZIndex())
   }
 
-  menuClicked(){
-    this.router.navigate(['menu']);
-    this.isDialogOpened = !this.isDialogOpened;
+  getWidth(index: number) {
+    return `${this.skillData[index].percent}%`;
   }
-
 }
 function getMaxZIndex() {
   return Math.max(

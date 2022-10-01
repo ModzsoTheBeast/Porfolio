@@ -1,0 +1,30 @@
+.settings{
+  position: absolute;
+  top: 50%;
+  left: 95vw;
+  width: fit-content;
+  height: fit-content;
+  z-index: 10;
+  animation: rotate 1s infinite;
+}
+
+.cBtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  color: lightgrey;
+}
+
+.cSquare{
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+@keyframes rotate {
+  to{
+    rotate: 360deg;
+  }
+}

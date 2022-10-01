@@ -6,7 +6,7 @@
   --cursorBlinkSpeed: 800ms;
   --typeWriterCharacters: 17;
   --text-color: white;
-  --mainColorTheme: red;
+  --mainColorTheme: #06d6a0;
   --darkBgColor: #171717;
   --gradient: linear-gradient(45deg,
     rgba(59,59,59,0.5) 0%,
@@ -24,7 +24,7 @@
 }
 
 html, body { height: 100%; }
-body { margin: 0; padding: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden}
+body { margin: 0; padding: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden }
 
 @font-face {
   font-family: "Rialltos";
@@ -58,4 +58,25 @@ body { margin: 0; padding: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
   align-items: center;
   background: var(--darkBgColor);
   text-align: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--darkBgColor);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--mainColorTheme);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mainColorTheme);
 }

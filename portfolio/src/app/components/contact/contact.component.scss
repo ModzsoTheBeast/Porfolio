@@ -71,7 +71,7 @@
 }
 
 ::ng-deep .mat-form-field-label-wrapper{
-  display: none;
+  //display: none;
 }
 
 ::ng-deep .mat-form-field .mat-form-field-wrapper{
@@ -83,8 +83,12 @@
   padding-left: 20px;
 }
 ::ng-deep .mat-form-field .mat-form-field-label {
-  color: white!important;
-  display: none;
+  color: grey!important;
+  //display: none;
+}
+::ng-deep .mat-form-field .mat-form-field-required-marker {
+  color: var(--mainColorTheme)!important;
+  //display: none;
 }
 ::ng-deep .mat-form-field .mat-form-field-underline {
   display: none;
@@ -96,7 +100,7 @@
   color: white;
 }
 
-::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+/*::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
   color: var(--mainColorTheme)!important;
 
 }
@@ -109,7 +113,7 @@
 ::ng-deep .mat-form-field.mat-focused .mat-input-element {
   color: var(--mainColorTheme);
 
-}
+}*/
 
 ::ng-deep .mat-form-field.mat-form-field-invalid .mat-input-element {
   color: white;

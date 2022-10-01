@@ -1,0 +1,38 @@
+.parentDiv{
+  border: 1px solid white;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  position: relative;
+  height: 30px;
+  background-color: black;
+}
+
+.skillName{
+  position: absolute;
+  top: -50px;
+  left: 0;
+  color: white;
+  font-size: 18px;
+}
+
+.percent{
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.filler {
+  content: '';
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 75%;
+  background-color: var(--mainColorTheme);
+}
