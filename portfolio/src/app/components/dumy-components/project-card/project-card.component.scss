@@ -7,7 +7,7 @@
   margin-top: 4em;
   margin-bottom: 4em;
   z-index: 3;
-  width: 80%;
+  width: 100%;
 }
 
 .black-bg{
@@ -15,7 +15,7 @@
   width: 95%;
   height: 350px;
   background-color: black;
-  top: 0;
+  top: 6%;
   left: 2.5em;
 }
 
@@ -30,6 +30,7 @@
   font-size: clamp(1rem, 3vw + .5rem, 2rem);
   color: var(--mainColorTheme);
   text-align: start;
+  overflow-wrap: anywhere;
 }
 .main-text > p{
   font-size: clamp(.8rem, 3vw + .5rem, 1.5rem);
@@ -38,16 +39,20 @@
   letter-spacing: 2px;
   font-weight: 400;
   line-height: normal;
+  overflow-wrap: anywhere;
 }
 .main-text > a{
   font-size: clamp(.8rem, 3vw + .5rem, 1.5rem);
-  color: var(--text-color);
+  color: var(--mainColorTheme);
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid white;
+  border: 5px solid var(--mainColorTheme);
   border-radius: 10px;
   padding: 20px;
   text-transform: capitalize;
+  font-weight: bold;
+  width: fit-content;
+  margin-top: 1em;
 }
 
 .main-text > a:hover{
@@ -56,17 +61,70 @@
 
 @keyframes button {
   to{
-    color: var(--mainColorTheme);
+    color: white;
+    border-color: white;
     text-shadow: 0 0 10px var(--mainColorTheme);
-    box-shadow: 0 0 10px var(--mainColorTheme), 0 0 40px var(--mainColorTheme), 0 0 80px var(--mainColorTheme);
+    box-shadow: 0 0 10px var(--mainColorTheme), 0 0 40px var(--mainColorTheme);
   }
 }
 
 .main-img{
   width: 50%;
+  height: 400px;
   border-radius: 20px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 4!important;
+  border: 1px solid var(--mainColorTheme);
+}
+
+@media screen and (max-width: 768px){
+  .black-bg{
+    display: none;
+  }
+  .main{
+    flex-direction: column-reverse!important;
+  }
+  .main-text {
+    width: 80%;
+    align-items: center!important;
+  }
+  .main-img {
+    width: 80%;
+  }
+  .main-text > p{
+    font-size: clamp(.8rem, 3vw + .5rem, 1.5rem);
+    color: var(--text-color);
+    text-align: start;
+    letter-spacing: 2px;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .black-bg{
+    display: none;
+  }
+  .main{
+    flex-direction: column-reverse!important;
+  }
+  .main-text {
+    width: 80%;
+    align-items: center!important;
+  }
+  .main-img {
+    width: 80%;
+  }
+  .main-text > p{
+    font-size: clamp(.8rem, 3vw + .5rem, 1.5rem);
+    color: var(--text-color);
+    text-align: start;
+    letter-spacing: 2px;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+  }
 }

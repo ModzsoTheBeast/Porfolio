@@ -23,7 +23,6 @@ export class ProjectCardComponent implements OnInit {
       if(main) main.style.setProperty('flex-direction', 'row-reverse')
       if(text) text.style.setProperty('align-items', 'end')
     }
-
   }
 
 }

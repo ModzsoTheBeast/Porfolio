@@ -11,3 +11,11 @@
     transform: rotateZ(180deg);
   }
 }
+.pcard{
+  width: 80%;
+}
+@media screen and (max-width: 768px){
+  .pcard{
+    width: 100%;
+  }
+}
