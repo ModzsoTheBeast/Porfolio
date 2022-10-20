@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {TransitionService} from "../../services/transition.service";
 
 @Component({
@@ -6,18 +6,22 @@ import {TransitionService} from "../../services/transition.service";
   templateUrl: './transition.component.html',
   styleUrls: ['./transition.component.scss']
 })
-export class TransitionComponent implements AfterViewInit {
+export class TransitionComponent implements OnInit {
+  @Input() transitionNumber:number = 0;
 
-  @Input() transitionMode = 1;
+  constructor() {}
 
-  constructor(private transitionService: TransitionService) {
-
+  ngOnInit(): void {
+    const boxes = document.querySelectorAll('.transitionDiv');
+    for(let j = 0; j < boxes.length; j++){
+      const box = boxes[j];
+      if (box) {
+          box.classList.add(`transitionDiv-${this.transitionNumber}`)
+      }
+    }
   }
 
-  ngAfterViewInit() {
-    let element = document.getElementById('transition');
-    this.transitionService.setTransitionNumber(element);
-  }
+
 
 
 }

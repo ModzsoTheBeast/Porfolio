@@ -1,4 +1,8 @@
 
+
+
+
+
 #menuBtn:hover{
   animation: rotate .3s ease forwards;
 }
@@ -29,7 +33,7 @@
   text-align: center;
   text-decoration: none;
   animation: scale .5s ease forwards;
-  z-index: 10000000000;
+  z-index: 50;
   font-family: Arial, monospace;
   margin-bottom: 1em;
 }

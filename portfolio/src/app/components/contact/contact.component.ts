@@ -32,6 +32,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuBtnService.changeOpenedSubject(false);
+    this.transitionService.removeIsActiveOnAllDiv();
   }
 
   get name(){

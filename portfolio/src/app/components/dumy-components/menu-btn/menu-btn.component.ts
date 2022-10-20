@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {MenuBtnService} from "../../../services/menu-btn.service";
+import {TransitionService} from "../../../services/transition.service";
 
 @Component({
   selector: 'app-menu-btn',
@@ -9,19 +10,22 @@ import {MenuBtnService} from "../../../services/menu-btn.service";
 })
 export class MenuBtnComponent implements OnInit {
   isDialogOpened: boolean = false;
-
   constructor(private router: Router,
-              private menuBtnService: MenuBtnService) { }
+              private menuBtnService: MenuBtnService,
+              private transitionService: TransitionService) { }
 
   ngOnInit(): void {
     this.menuBtnService.changeOpenedSubject(this.isDialogOpened);
   }
 
   menuClicked(){
-    if(this.isDialogOpened) this.router.navigate(['home']).then();
-    else this.router.navigate(['menu']).then();
     this.menuBtnService.opened$.subscribe(res => {
       this.isDialogOpened = res;
     })
+    this.transitionService.addIsActiveOnAllDivNoTimeOut()
+    setTimeout(()=> {
+      if(this.isDialogOpened) this.router.navigate(['home']).then();
+      else this.router.navigate(['menu']).then();
+    }, 500)
   }
 }

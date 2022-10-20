@@ -15,5 +15,6 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuBtnService.changeOpenedSubject(false);
+    this.transitionService.removeIsActiveOnAllDiv();
   }
 }

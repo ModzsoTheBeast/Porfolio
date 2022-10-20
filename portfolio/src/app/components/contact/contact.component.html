@@ -34,7 +34,8 @@
             <mat-error *ngIf="subjectError">Kötelező</mat-error>
           </mat-form-field>
           <mat-form-field class="inp" style="height: 100%;">
-            <textarea matInput placeholder="Message" type="text" formControlName="message" ></textarea>
+            <textarea matInput placeholder="Message" type="text" formControlName="message" maxlength="50"></textarea>
+            <mat-hint></mat-hint>
             <mat-error *ngIf="messageError">Kötelező</mat-error>
           </mat-form-field>
           <button mat-raised-button type="submit" color="send">Send</button>
@@ -77,3 +78,4 @@
     </div>
   </div>
 </div>
+<app-transition [transitionNumber]="3"></app-transition>

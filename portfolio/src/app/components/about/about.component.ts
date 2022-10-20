@@ -23,7 +23,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuBtnService.changeOpenedSubject(false);
-    console.log(getMaxZIndex())
+    this.transitionService.removeIsActiveOnAllDiv();
   }
 
   getWidth(index: number) {

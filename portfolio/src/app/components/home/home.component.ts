@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import {Component, OnInit, HostListener, ViewChild, OnDestroy} from '@angular/core';
 import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import {TransitionService} from "../../services/transition.service";
@@ -12,7 +12,7 @@ import {MenuBtnService} from "../../services/menu-btn.service";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   id: string = "tsparticles";
   particlesOptions: object = {
     fpsLimit: 120,
@@ -84,11 +84,16 @@ export class HomeComponent implements OnInit {
 
   constructor(private dialog: MatDialog,
               private router: Router,
-              private menuBtnService: MenuBtnService) { }
+              private menuBtnService: MenuBtnService,
+              private transitionService: TransitionService) { }
 
   ngOnInit(): void {
-    //this.transitionSecvice.transitionLogic();
     this.menuBtnService.changeOpenedSubject(false);
+    this.transitionService.removeIsActiveOnAllDiv();
+  }
+  ngOnDestroy() {
+    const box = document.querySelector('.transitionDiv');
+    if(box) box.classList.add('is-active')
   }
 
   particlesLoaded(container: Container): void {}
