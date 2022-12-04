@@ -67,7 +67,7 @@ body { margin: 0; padding: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--darkBgColor);
+  background: black;
 }
 
 /* Handle */
@@ -79,4 +79,8 @@ body { margin: 0; padding: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--mainColorTheme);
+}
+
+::-webkit-resizer {
+  background: black;
 }

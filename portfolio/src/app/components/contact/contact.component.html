@@ -34,8 +34,10 @@
             <mat-error *ngIf="subjectError">Kötelező</mat-error>
           </mat-form-field>
           <mat-form-field class="inp" style="height: 100%;">
-            <textarea matInput placeholder="Message" type="text" formControlName="message" maxlength="50"></textarea>
-            <mat-hint></mat-hint>
+            <textarea matInput placeholder="Message" type="text" formControlName="message" maxlength="500" style="max-height: 180px"></textarea>
+<!--
+            <mat-hint>{{message?.value}}/500 </mat-hint>
+-->
             <mat-error *ngIf="messageError">Kötelező</mat-error>
           </mat-form-field>
           <button mat-raised-button type="submit" color="send">Send</button>
